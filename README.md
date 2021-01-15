@@ -13,7 +13,7 @@
 ## 项目地址
 
 - [⚡️ vue3.x + element-plus + TypeScript](https://github.com/MyJacking/iooc-vue-admin)
-- [⚡️ vue3.x + element-plus + JavaScript (开发中...)](https://github.com/MyJacking/iooc-vue-admin)
+- [⚡️ vue3.x + element-plus + JavaScript (开发中...)](https://github.com/MyJacking/iooc-vue-admin/tree/V3Js)
 
 ## iooc-admin 前端讨论 QQ 群 741396149
 
