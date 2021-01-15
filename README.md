@@ -56,6 +56,7 @@ IOOC-ADMIN 是一个用于快速开发后台的框架，我们可以用它来开
 ```
 iooc-admin/src
     ├── main.js (主要文件)
+    ├── Home.vue (首页)
     ├── App.tsx (页面入口文件)
     ├── assets (资源文件)
     ├── api (接口文件 备用)
