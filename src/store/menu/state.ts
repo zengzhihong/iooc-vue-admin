@@ -14,5 +14,5 @@ export const state: MenuStateTypes = {
     // 左侧菜单是否展开
     collapse: false,
     // 权限列表
-    permission: [],
+    permission: store.get("permission") || [],
 }
