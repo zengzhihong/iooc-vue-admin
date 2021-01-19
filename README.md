@@ -42,7 +42,6 @@ yarn dev
 | [element-ui](https://github.com/ElemeFE/element)                 |
 | [element-plus](https://github.com/element-plus/element-plus)     |
 | [axios](https://github.com/axios/axios)                          |
-| [cl-crud-next](https://www.npmjs.com/package/cl-crud-next)       |
 
 
 ## 特性
