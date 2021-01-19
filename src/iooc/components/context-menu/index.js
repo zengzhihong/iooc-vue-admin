@@ -1,4 +1,5 @@
 import "./index.scss";
+import {nextTick} from "vue"
 import { contains } from "@/iooc/utils";
 
 export default {
@@ -31,10 +32,10 @@ export default {
             this.visible = true;
             this.index = null;
 
-            this.$nextTick(() => {
+            nextTick(() => {
                 const { clientHeight: h1, clientWidth: w1 } = document.body;
                 const { clientHeight: h2, clientWidth: w2 } = this.$el.querySelector(
-                    ".cl-context-menu-box"
+                    ".io-context-menu-box"
                 );
 
                 if (pageY + h2 > h1) {
@@ -46,7 +47,7 @@ export default {
                 }
 
                 this.style = position;
-            });
+            })
         },
 
         close() {
