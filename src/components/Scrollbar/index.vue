@@ -1,6 +1,6 @@
 <template>
 	<el-scrollbar
-		class="cl-scrollbar"
+		class="io-scrollbar"
 		:view-style="[
 			{
 				'overflow-x': 'hidden',
@@ -25,7 +25,7 @@ import { getBrowser } from "@/utils/role";
 const { plat } = getBrowser();
 
 export default {
-	name: "cl-scrollbar",
+	name: "io-scrollbar",
 
 	props: {
 		native: Boolean,

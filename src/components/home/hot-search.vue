@@ -42,9 +42,9 @@
 			</el-row>
 
 			<div class="hot-search__table">
-				<cl-crud @load="onLoad">
+				<io-crud @load="onLoad">
 					<el-row>
-						<cl-table
+						<io-table
 							:props="{
 								border: false,
 								'max-height': '300px',
@@ -54,9 +54,9 @@
 								}
 							}"
 							:columns="table.columns"
-						></cl-table>
+						></io-table>
 					</el-row>
-				</cl-crud>
+				</io-crud>
 			</div>
 		</div>
 	</div>

@@ -1,5 +1,5 @@
 <template>
-    <div class="cl-role-tree" v-loading="loading">
+    <div class="io-role-tree" v-loading="loading">
         <p>{{ title }}</p>
 
         <el-input placeholder="输入关键字进行过滤" v-model="keyword" size="small"> </el-input>

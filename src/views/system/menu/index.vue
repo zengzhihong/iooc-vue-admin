@@ -1,12 +1,12 @@
 <template>
     <div>
-        <cl-crud ref="crud" @load="onLoad" :on-refresh="onRefresh">
+        <io-crud ref="crud" @load="onLoad" :on-refresh="onRefresh">
             <el-row type="flex">
-                <cl-refresh-btn/>
-                <cl-add-btn/>
+                <io-refresh-btn/>
+                <io-add-btn/>
             </el-row>
 
-            <cl-table ref="table" v-bind="tableList" @row-click="onRowClick" @row-contextmenu="onRowContextMenu">
+            <io-table ref="table" v-bind="tableList" @row-click="onRowClick" @row-contextmenu="onRowContextMenu">
                 <template #column-name="{ scope }">
                     <span>{{ scope.row.name }}</span>
                     <el-tag
@@ -66,10 +66,10 @@
                     </el-button
                     >
                 </template>
-            </cl-table>
+            </io-table>
 
-            <cl-upsert ref="upsert" v-bind="upsertList" @open="onUpsertOpen"></cl-upsert>
-        </cl-crud>
+            <io-upsert ref="upsert" v-bind="upsertList" @open="onUpsertOpen"></io-upsert>
+        </io-crud>
 
         <context-menu ref="contextMenu"></context-menu>
     </div>

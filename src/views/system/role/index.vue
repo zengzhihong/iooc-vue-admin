@@ -1,24 +1,24 @@
 <template>
-    <cl-crud @load="onLoad">
+    <io-crud @load="onLoad">
         <el-row type="flex">
-            <cl-refresh-btn />
-            <cl-add-btn />
-            <cl-multi-delete-btn />
-            <cl-flex1 />
-            <cl-search-key />
+            <io-refresh-btn />
+            <io-add-btn />
+            <io-delete-btn />
+            <io-flex />
+            <io-search-key />
         </el-row>
 
         <el-row>
-            <cl-table v-bind="table"> </cl-table>
+            <io-table v-bind="table"> </io-table>
         </el-row>
 
         <el-row type="flex">
-            <cl-flex1 />
-            <cl-pagination />
+            <io-flex />
+            <io-pagination />
         </el-row>
 
-        <cl-upsert v-bind="upsert"></cl-upsert>
-    </cl-crud>
+        <io-upsert v-bind="upsert"></io-upsert>
+    </io-crud>
 </template>
 
 <script lang="ts">

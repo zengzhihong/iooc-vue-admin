@@ -7,8 +7,8 @@ import SET_SERVICE from "./service/load";
 import {SET_ROUTER} from "./router"
 import {App} from "vue";
 
-async function bootstrap(app: App, options: { store: any; router: any; "view-routes": any; "cl-crud": any; }) {
-    const {store, router, ["view-routes"]: routes, ["cl-crud"]: crud} = options;
+async function bootstrap(app: App, options: { store: any; router: any; "view-routes": any; "io-crud": any; }) {
+    const {store, router, ["view-routes"]: routes, ["io-crud"]: crud} = options;
 
     SET_ROUTER({router, routes});
 

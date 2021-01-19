@@ -2641,17 +2641,6 @@ cipher-base@^1.0.0, cipher-base@^1.0.1, cipher-base@^1.0.3:
     inherits "^2.0.1"
     safe-buffer "^5.0.1"
 
-cl-crud-next@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.npm.taobao.org/cl-crud-next/download/cl-crud-next-0.1.0.tgz?cache=0&sync_timestamp=1610681212079&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fcl-crud-next%2Fdownload%2Fcl-crud-next-0.1.0.tgz#28c8bcb44f8e6cb3426dfd35056a1b96a6c19701"
-  integrity sha1-KMi8tE+ObLNCbf01BWoblqbBlwE=
-  dependencies:
-    array.prototype.flat "^1.2.4"
-    clone-deep "^4.0.1"
-    core-js "^3.6.5"
-    mitt "^2.1.0"
-    vue "^3.0.0"
-
 class-utils@^0.3.5:
   version "0.3.6"
   resolved "https://registry.npm.taobao.org/class-utils/download/class-utils-0.3.6.tgz#f93369ae8b9a7ce02fd41faad0ca83033190c463"
@@ -3647,6 +3636,19 @@ element-plus@^1.0.1-beta.24:
   version "1.0.1-beta.24"
   resolved "https://registry.npm.taobao.org/element-plus/download/element-plus-1.0.1-beta.24.tgz?cache=0&sync_timestamp=1610346442434&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Felement-plus%2Fdownload%2Felement-plus-1.0.1-beta.24.tgz#304b17e23fe1cdc5d90fc0c51dd16b34b237e341"
   integrity sha1-MEsX4j/hzcXZD8DFHdFrNLI340E=
+  dependencies:
+    "@popperjs/core" "^2.4.4"
+    async-validator "^3.4.0"
+    dayjs "1.x"
+    lodash "^4.17.20"
+    mitt "^2.1.0"
+    normalize-wheel "^1.0.1"
+    resize-observer-polyfill "^1.5.1"
+
+element-plus@^1.0.1-beta.27:
+  version "1.0.1-beta.27"
+  resolved "https://registry.npm.taobao.org/element-plus/download/element-plus-1.0.1-beta.27.tgz#f7ea863e2a85f40d0bfccd9a3f778c883a844802"
+  integrity sha1-9+qGPiqF9A0L/M2aP3eMiDqESAI=
   dependencies:
     "@popperjs/core" "^2.4.4"
     async-validator "^3.4.0"
@@ -5121,6 +5123,17 @@ internal-ip@^4.3.0:
   dependencies:
     default-gateway "^4.2.0"
     ipaddr.js "^1.9.0"
+
+io-crud-vue@1.0.6:
+  version "1.0.6"
+  resolved "https://registry.npm.taobao.org/io-crud-vue/download/io-crud-vue-1.0.6.tgz#8e78ea15ee60bb9f04c693737d9e2167576d46be"
+  integrity sha1-jnjqFe5gu58ExpNzfZ4hZ1dtRr4=
+  dependencies:
+    array.prototype.flat "^1.2.4"
+    core-js "^3.6.5"
+    element-plus "^1.0.1-beta.27"
+    mitt "^2.1.0"
+    vue "^3.0.0"
 
 ip-regex@^2.1.0:
   version "2.1.0"

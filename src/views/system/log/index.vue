@@ -1,7 +1,7 @@
 <template>
-	<cl-crud ref="crud" @load="onLoad">
+	<io-crud ref="crud" @load="onLoad">
 		<el-row type="flex">
-			<cl-refresh-btn></cl-refresh-btn>
+			<io-refresh-btn></io-refresh-btn>
 
 			<el-button
 				v-permission="$service.system.log.permission.clear"
@@ -12,7 +12,7 @@
 				清空
 			</el-button>
 
-			<cl-filter label="日志保存天数">
+			<io-filter label="日志保存天数">
 				<el-input-number
 					controls-position="right"
 					size="mini"
@@ -21,20 +21,20 @@
 					v-model="day"
 					@blur="saveDay"
 				></el-input-number>
-			</cl-filter>
+			</io-filter>
 
-			<cl-flex1 />
-			<cl-search-key placeholder="请输入请求地址, 参数，ip地址"></cl-search-key>
+			<io-flex />
+			<io-search-key placeholder="请输入请求地址, 参数，ip地址"></io-search-key>
 		</el-row>
 
 		<el-row>
-			<cl-table v-bind="table"></cl-table>
+			<io-table v-bind="table"></io-table>
 		</el-row>
 
 		<el-row type="flex">
-			<cl-pagination></cl-pagination>
+			<io-pagination></io-pagination>
 		</el-row>
-	</cl-crud>
+	</io-crud>
 </template>
 
 <script>

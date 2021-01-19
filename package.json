@@ -9,11 +9,11 @@
   },
   "dependencies": {
     "axios": "^0.21.0",
-    "cl-crud-next": "^0.1.0",
     "core-js": "^3.6.5",
     "echarts": "^5.0.0",
     "echarts-for-vue": "1.0.2",
     "element-plus": "^1.0.1-beta.24",
+    "io-crud-vue": "1.0.6",
     "lodash": "^4.17.20",
     "normalize.css": "^8.0.1",
     "nprogress": "0.2.0",

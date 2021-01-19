@@ -36,7 +36,7 @@ export default defineComponent({
             this.$nextTick(() => {
                 const {clientHeight: h1, clientWidth: w1} = document.body;
                 const {clientHeight: h2, clientWidth: w2} = this.$el.querySelector(
-                    ".cl-context-menu-box"
+                    ".io-context-menu-box"
                 );
 
                 if (pageY + h2 > h1) {
@@ -98,7 +98,7 @@ export default defineComponent({
 
         const deep = (list: any, level: any) => {
             return (
-                <div class={["cl-context-menu-box", level > 1 && "_append"]}>
+                <div class={["io-context-menu-box", level > 1 && "_append"]}>
                     {list
                         .filter((e: any) => !e.hidden)
                         .map((e: any, i: number) => {
@@ -130,7 +130,7 @@ export default defineComponent({
 
         return (
             this.visible && (
-                <div class="cl-context-menu" style={{ left: left + "px", top: top + "px" }}>
+                <div class="io-context-menu" style={{ left: left + "px", top: top + "px" }}>
                     {slot ? slot() : deep(this.list, 1)}
                 </div>
             )

@@ -1,16 +1,16 @@
 <template>
-    <div class="cl-upload__wrap">
+    <div class="io-upload__wrap">
         <div
-            class="cl-upload"
+            class="io-upload"
             :class="[
-				`cl-upload--${listType}`,
+				`io-upload--${listType}`,
 				{
 					'is-multiple': multiple,
 					'is-drag': drag
 				}
 			]"
         >
-            <el-input class="cl-upload__hidden" type="hidden" v-model="modelValue"></el-input>
+            <el-input class="io-upload__hidden" type="hidden" v-model="modelValue"></el-input>
 
             <el-upload
                 :action="JAction"
@@ -45,8 +45,8 @@
                 <slot>
                     <!-- picture-card -->
                     <template v-if="listType == 'picture-card'">
-                        <i :class="['cl-upload__icon', icon]"></i>
-                        <span class="cl-upload__text" v-if="text">{{ text }}</span>
+                        <i :class="['io-upload__icon', icon]"></i>
+                        <span class="io-upload__text" v-if="text">{{ text }}</span>
                     </template>
 
                     <!-- file -->
@@ -58,22 +58,22 @@
                     </template>
 
                     <template v-else>
-                        <div class="cl-upload__cover" v-if="jUrls[0]">
+                        <div class="io-upload__cover" v-if="jUrls[0]">
                             <img v-if="jUrls[0].type == 'image'" :src="jUrls[0].url"/>
 
                             <span v-else>{{ _urls[0].name }}</span>
                         </div>
 
                         <template v-else>
-                            <i :class="['cl-upload__icon', icon]"></i>
-                            <span class="cl-upload__text" v-if="text">{{ text }}</span>
+                            <i :class="['io-upload__icon', icon]"></i>
+                            <span class="io-upload__text" v-if="text">{{ text }}</span>
                         </template>
                     </template>
                 </slot>
             </el-upload>
         </div>
 
-        <cl-dialog
+        <io-dialog
             title="图片预览"
             v-model="preview.visible"
             :props="{
@@ -81,7 +81,7 @@
 			}"
         >
             <img width="100%" :src="preview.url" alt=""/>
-        </cl-dialog>
+        </io-dialog>
     </div>
 </template>
 
@@ -95,7 +95,7 @@ import useService from "@/hooks/useService";
 import {ElMessage} from "element-plus";
 
 export default defineComponent({
-    name: "cl-upload",
+    name: "io-upload",
     props: {
         value: [Array, String],
         modelValue: [Array, String],
@@ -373,7 +373,7 @@ export default defineComponent({
 
 
 <style lang="scss" scoped>
-.cl-upload {
+.io-upload {
     display: flex;
     flex-wrap: wrap;
 
@@ -383,7 +383,7 @@ export default defineComponent({
     }
 
     &.is-multiple {
-        .cl-upload__wrap {
+        .io-upload__wrap {
             margin-right: 10px;
         }
     }
@@ -405,7 +405,7 @@ export default defineComponent({
                     border-color: #409eff;
                 }
 
-                .cl-upload__cover {
+                .io-upload__cover {
                     img {
                         display: block;
                         height: 100%;
@@ -423,7 +423,7 @@ export default defineComponent({
 
     &--picture-card {
         /deep/ .el-upload {
-            .cl-upload__icon {
+            .io-upload__icon {
                 position: relative;
                 top: 4px;
             }

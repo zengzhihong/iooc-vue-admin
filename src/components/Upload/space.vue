@@ -1,15 +1,15 @@
 <template>
-	<div class="cl-upload-space__wrap">
+	<div class="io-upload-space__wrap">
 		<slot>
 			<el-button v-if="showButton" size="mini" @click="open">点击上传</el-button>
 		</slot>
 
 		<!-- 弹框 -->
-		<cl-dialog :visible.sync="visible" v-bind="props" :op-list="['close']">
-			<div class="cl-upload-space">
+		<io-dialog :visible.sync="visible" v-bind="props" :op-list="['close']">
+			<div class="io-upload-space">
 				<!-- 类目 -->
-				<div class="cl-upload-space__category">
-					<div class="cl-upload-space__category-search">
+				<div class="io-upload-space__category">
+					<div class="io-upload-space__category-search">
 						<el-button type="primary" size="mini" @click="editCategory()"
 							>添加分类</el-button
 						>
@@ -21,7 +21,7 @@
 						></el-input>
 					</div>
 
-					<div class="cl-upload-space__category-list">
+					<div class="io-upload-space__category-list">
 						<ul>
 							<li
 								v-for="(item, index) in categoryList"
@@ -39,9 +39,9 @@
 				</div>
 
 				<!-- 内容 -->
-				<div class="cl-upload-space__content">
+				<div class="io-upload-space__content">
 					<!-- 操作栏 -->
-					<div class="cl-upload-space__opbar">
+					<div class="io-upload-space__opbar">
 						<el-button
 							type="success"
 							size="mini"
@@ -58,7 +58,7 @@
 							>删除选中文件</el-button
 						>
 
-						<cl-upload
+						<io-upload
 							style="margin-left: 10px"
 							list-type="slot"
 							:action="action"
@@ -72,12 +72,12 @@
 							:before-upload="beforeUpload"
 						>
 							<el-button size="mini" type="primary">点击上传</el-button>
-						</cl-upload>
+						</io-upload>
 					</div>
 
 					<!-- 文件区域 -->
 					<div
-						class="cl-upload-space__file"
+						class="io-upload-space__file"
 						v-loading="file.loading"
 						element-loading-text="拼命加载中"
 					>
@@ -93,8 +93,8 @@
 						</el-row>
 
 						<!-- 空态 -->
-						<div class="cl-upload-space__file-empty" v-else>
-							<cl-upload
+						<div class="io-upload-space__file-empty" v-else>
+							<io-upload
 								drag
 								:action="action"
 								:accept="accept"
@@ -109,7 +109,7 @@
 								<div class="el-upload__text">
 									将文件拖到此处，或<em>点击上传</em>
 								</div>
-							</cl-upload>
+							</io-upload>
 						</div>
 					</div>
 
@@ -123,13 +123,13 @@
 					></el-pagination>
 				</div>
 			</div>
-		</cl-dialog>
+		</io-dialog>
 
 		<!-- 右键菜单 -->
-		<cl-context-menu ref="context-menu"></cl-context-menu>
+		<io-context-menu ref="context-menu"></io-context-menu>
 
 		<!-- 添加分类 -->
-		<cl-form ref="form-category"></cl-form>
+		<io-form ref="form-category"></io-form>
 	</div>
 </template>
 
@@ -232,15 +232,15 @@ export default {
 
 				return (
 					<div
-						class={["cl-upload-space__file-item", `is-${fileType}`]}
+						class={["io-upload-space__file-item", `is-${fileType}`]}
 						on-click={this.onSelect}
 						on-contextmenu={this.onContextMenu}>
 						{itemEl}
 
-						<div class="cl-upload-space__file-size"></div>
+						<div class="io-upload-space__file-size"></div>
 
 						{selected && (
-							<div class="cl-upload-space__file-mask">
+							<div class="io-upload-space__file-mask">
 								<i class="el-icon-success"></i>
 							</div>
 						)}
@@ -581,7 +581,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.cl-upload-space {
+.io-upload-space {
 	display: flex;
 	min-height: 520px;
 
@@ -635,7 +635,7 @@ export default {
 		overflow: hidden auto;
 		margin-bottom: 10px;
 
-		/deep/.cl-upload-space__file-item {
+		/deep/.io-upload-space__file-item {
 			display: flex;
 			align-items: center;
 			justify-content: center;
@@ -664,14 +664,14 @@ export default {
 				}
 			}
 
-			.cl-upload-space__file-size {
+			.io-upload-space__file-size {
 				position: absolute;
 				bottom: 0;
 				left: 0;
 				background-color: rgba(0, 0, 0, 0.5);
 			}
 
-			.cl-upload-space__file-mask {
+			.io-upload-space__file-mask {
 				position: absolute;
 				left: 0;
 				top: 0;

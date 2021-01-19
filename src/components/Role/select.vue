@@ -11,7 +11,7 @@
 
 <script>
 export default {
-    name: "cl-role-select",
+    name: "io-role-select",
 	props: {
 		value: [String, Number, Array],
 		props: Object,

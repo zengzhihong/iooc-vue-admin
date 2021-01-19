@@ -1,9 +1,9 @@
 <template>
-    <div class="cl-dept-tree">
-        <div class="cl-dept-tree__header">
+    <div class="io-dept-tree">
+        <div class="io-dept-tree__header">
             <div>组织架构</div>
 
-            <ul class="cl-dept-tree__op">
+            <ul class="io-dept-tree__op">
                 <li>
                     <el-tooltip content="刷新">
                         <i class="el-icon-refresh" @click="refresh()"></i>
@@ -23,7 +23,7 @@
             </ul>
         </div>
 
-        <div class="cl-dept-tree__container" @contextmenu.prevent="openCM">
+        <div class="io-dept-tree__container" @contextmenu.prevent="openCM">
             <el-tree
                 node-key="id"
                 highlight-current
@@ -40,12 +40,12 @@
                 @node-contextmenu="openCM"
             >
                 <template v-slot="{ node, data }">
-                    <div class="cl-dept-tree__node">
-						<span class="cl-dept-tree__node-label" @click="rowClick(data)">{{
+                    <div class="io-dept-tree__node">
+						<span class="io-dept-tree__node-label" @click="rowClick(data)">{{
                                 node.label
                             }}</span>
                         <span
-                            class="cl-dept-tree__node-icon"
+                            class="io-dept-tree__node-icon"
                             v-if="!isPc"
                             @click="openCM($event, data, node)"
                         >
@@ -57,7 +57,7 @@
         </div>
 
         <!-- 部门编辑 -->
-        <cl-form ref="deptUpsert"> </cl-form>
+        <io-form ref="deptUpsert"> </io-form>
 
         <!-- 右键按钮 -->
         <context-menu ref="contextMenu"></context-menu>
@@ -358,7 +358,7 @@ export default defineComponent({
 
 
 <style lang="scss" scoped>
-.cl-dept-tree {
+.io-dept-tree {
     height: 100%;
     width: 100%;
 

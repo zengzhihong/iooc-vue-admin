@@ -6,8 +6,8 @@ import {store} from './store'
 import {bootstrap} from "@/admin"
 
 // @ts-ignore
-import ClCrudNext from "cl-crud-next"
-import "cl-crud-next/index.css"
+import IoCrudVue from "io-crud-vue"
+import "io-crud-vue/dist/index.css"
 
 import {install as CompInstall} from "@/components"
 import {install as PermInstall} from "@/admin/permission"
@@ -43,7 +43,7 @@ app.use(bootstrap, {
     .use(PermInstall)
     .use(ElementPlus, {locale})
     // @ts-ignore
-    .use(ClCrudNext, {
+    .use(IoCrudVue, {
         crud: {
             dict: {
                 sort: {

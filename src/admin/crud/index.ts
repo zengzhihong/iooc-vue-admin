@@ -1,7 +1,7 @@
 // @ts-ignore
-import ClCrudNext from "cl-crud-next"
+import IoCrudVue from "io-crud-vue"
 
 
 export default function ({app, crud}: any) {
-    app.use(ClCrudNext, crud)
+    app.use(IoCrudVue, crud)
 }

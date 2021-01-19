@@ -1,5 +1,5 @@
 <template>
-    <div class="cl-avatar" :class="[size, shape]" :style="[style]">
+    <div class="io-avatar" :class="[size, shape]" :style="[style]">
         <el-image :src="src" alt="">
             <div slot="error" class="image-slot">
                 <i class="el-icon-picture-outline"></i>
@@ -11,7 +11,7 @@
 <script lang="ts">
 import {defineComponent, reactive, onMounted} from "vue"
 export default defineComponent({
-    name: "cl-avatar",
+    name: "io-avatar",
     props: {
         src: String,
         size: {
@@ -43,7 +43,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-.cl-avatar {
+.io-avatar {
     overflow: hidden;
     background-color: #f7f7f7;
 

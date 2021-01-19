@@ -22,40 +22,41 @@
                 </div>
 
                 <div class="container">
-                    <cl-crud ref="crud" @load="onLoad" :on-refresh="onRefresh">
+                    <io-crud ref="crud" @load="onLoad" :on-refresh="onRefresh">
                         <el-row type="flex">
-                            <cl-refresh-btn></cl-refresh-btn>
-                            <cl-add-btn></cl-add-btn>
-                            <cl-multi-delete-btn></cl-multi-delete-btn>
+                            <io-refresh-btn />
+                            <io-add-btn />
+                            <io-delete-btn />
                             <el-button
                                 v-permission="service.system.user.permission.move"
                                 size="mini"
+                                style="margin-left: 10px"
                                 type="success"
                                 :disabled="selects.ids.length == 0"
                                 @click="toMove"
                             >转移</el-button
                             >
-                            <cl-flex1></cl-flex1>
-                            <cl-search-key></cl-search-key>
+                            <io-flex />
+                            <io-search-key />
                         </el-row>
 
 
 
                         <el-row>
-                            <cl-table
+                            <io-table
                                 ref="table"
                                 v-bind="tableList"
                                 @selection-change="onSelectionChange"
                             >
                                 <!-- 头像 -->
                                 <template #column-headImg="{ scope }">
-                                    <cl-avatar
+                                    <io-avatar
                                         shape="square"
                                         size="medium"
                                         :src="defaultAvatar(scope.row.headImg)"
                                         :style="{ margin: 'auto' }"
                                     >
-                                    </cl-avatar>
+                                    </io-avatar>
                                 </template>
 
                                 <!-- 权限 -->
@@ -81,21 +82,21 @@
                                     >转移</el-button
                                     >
                                 </template>
-                            </cl-table>
+                            </io-table>
                         </el-row>
 
                         <el-row type="flex">
-                            <cl-flex1></cl-flex1>
-                            <cl-pagination></cl-pagination>
+                            <io-flex></io-flex>
+                            <io-pagination></io-pagination>
                         </el-row>
 
-                        <cl-upsert
+                        <io-upsert
                             ref="upsert"
                             :items="upsertList.items"
                             :onSubmit="onUpsertSubmit"
                             @open="onUpsertOpen"
-                        ></cl-upsert>
-                    </cl-crud>
+                        ></io-upsert>
+                    </io-crud>
                 </div>
             </div>
         </div>
@@ -223,7 +224,7 @@ export default defineComponent({
                     label: "头像",
                     span: 24,
                     component: {
-                        name: "cl-upload",
+                        name: "io-upload",
                         props: {
                             text: "选择头像",
                             icon: "el-icon-picture"
@@ -303,7 +304,7 @@ export default defineComponent({
                     span: 24,
                     value: [],
                     component: {
-                        name: "cl-role-select",
+                        name: "io-role-select",
                         props: {
                             props: {
                                 "multiple-limit": 3

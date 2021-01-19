@@ -74,8 +74,8 @@ export default defineComponent({
     },
     render() {
         return (
-            <div class="cl-dept-move">
-                <cl-form ref="form" />
+            <div class="io-dept-move">
+                <io-form ref="form" />
             </div>
         )
     }

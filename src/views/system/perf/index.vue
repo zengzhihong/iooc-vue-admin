@@ -1,5 +1,5 @@
 <template>
-	<cl-scrollbar>
+	<io-scrollbar>
 		<div class="system-perf">
 			<ct ref="ct"></ct>
 
@@ -15,7 +15,7 @@
 				</el-col>
 			</el-row>
 		</div>
-	</cl-scrollbar>
+	</io-scrollbar>
 </template>
 
 <script>
