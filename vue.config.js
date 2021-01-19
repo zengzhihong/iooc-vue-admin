@@ -2,7 +2,7 @@ const isProduction = process.env.NODE_ENV === "production";
 
 module.exports = {
     publicPath: "/",
-    lintOnSave: true,
+    lintOnSave: false,
     productionSourceMap: false,
     parallel: require("os").cpus().length > 1,
 

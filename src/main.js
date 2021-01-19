@@ -15,9 +15,9 @@ import ElementPlus from "element-plus";
 import "@/assets/css/element-variables.scss";
 import locale from "element-plus/lib/locale/lang/zh-cn";
 
-// cl-crud-next
-import ClCrudNext from "cl-crud-next";
-import "cl-crud-next/index.css";
+// io-crud-vue
+import IoCrudVue from "io-crud-vue"
+import "io-crud-vue/dist/index.css"
 
 // echarts
 import * as echarts from "echarts";
@@ -37,7 +37,7 @@ createApp(App)
     .use(store)
     .use(router)
     .use(ElementPlus, { locale })
-    .use(ClCrudNext, {
+    .use(IoCrudVue, {
         crud: {
             dict: {
                 sort: {

@@ -4,7 +4,7 @@
 
 		<el-form size="small" label-width="100px" :model="form" :disabled="saving">
 			<el-form-item label="头像">
-				<cl-upload v-model="form.headImg"></cl-upload>
+				<io-upload v-model="form.headImg"></io-upload>
 			</el-form-item>
 
 			<el-form-item label="昵称">
