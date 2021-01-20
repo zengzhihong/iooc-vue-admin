@@ -24,7 +24,7 @@ export default defineComponent({
 
         const fn = (list: MenuProps[]) => {
             return list
-                .filter((e: MenuProps) => e.isShow !== 0)
+                .filter((e: MenuProps) => e.isShow)
                 .map((e: MenuProps) => {
                     let html = null;
 
@@ -53,7 +53,7 @@ export default defineComponent({
                     return html;
                 });
         };
-        let el = fn(menuGroup.value);
+
 
         const onSelect = {
             "onSelect": (index: string) => {
@@ -65,7 +65,7 @@ export default defineComponent({
                 //         path: index,
                 //     }).catch(err => console.error(err))
                 // }
-            } 
+            }
         }
 
         return {
@@ -73,18 +73,21 @@ export default defineComponent({
             menuCollapse,
             toView,
             onSelect,
-            el
+            fn
         }
     },
 
     render() {
+
+        let el = this.fn(this.menuGroup);
+
         return (
             <ElMenu
                 defaultActive={this.$route.path}
                 collapseTransition={false}
                 collapse={this.menuCollapse}
                 {...this.onSelect}>
-                {this.el}
+                {el}
             </ElMenu>
         )
     }

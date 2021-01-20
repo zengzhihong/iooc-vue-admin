@@ -1,6 +1,6 @@
 <template>
     <div>
-        <io-crud ref="crud" @load="onLoad" :on-refresh="onRefresh">
+        <io-crud ref="crud" @load="onLoad" :on-refresh="onRefresh" :on-delete="onDelete">
             <el-row type="flex">
                 <io-refresh-btn/>
                 <io-add-btn/>
@@ -68,7 +68,7 @@
                 </template>
             </io-table>
 
-            <io-upsert ref="upsert" v-bind="upsertList" @open="onUpsertOpen"></io-upsert>
+            <io-upsert ref="upsert" v-bind="upsertList" @open="onUpsertOpen" :on-submit="onUpsertSubmit"></io-upsert>
         </io-crud>
 
         <context-menu ref="contextMenu"></context-menu>
@@ -79,10 +79,13 @@
 import {defineComponent, ref} from "vue"
 import {deepTree} from "@/utils/role"
 import useService from "@/hooks/useService";
+import {useStore} from "@/hooks/useStore"
+import {AllActionTypes} from "@/store/action-types";
 
 export default defineComponent({
     setup() {
         const service = useService()
+        const store = useStore()
         const crud = ref<any>()
         const upsert = ref<any>()
         const table = ref<any>()
@@ -113,11 +116,13 @@ export default defineComponent({
                     dict: [
                         {
                             label: "目录",
-                            value: 0
+                            value: 0,
+                            type: "success"
                         },
                         {
                             label: "菜单",
-                            value: 1
+                            value: 1,
+                            type: "danger"
                         },
                         {
                             label: "权限",
@@ -191,11 +196,11 @@ export default defineComponent({
                         options: [
                             {
                                 label: "目录",
-                                value: 0
+                                value: 0,
                             },
                             {
                                 label: "菜单",
-                                value: 1
+                                value: 1,
                             },
                             {
                                 label: "权限",
@@ -317,7 +322,7 @@ export default defineComponent({
 
         const onLoad = function ({ctx, app}: any) {
             ctx.service(service.system.menu)
-                .set("dict", {api: {page: "list"}})
+                .set("dict", {api: {page: "list", update: "update"}})
                 .done();
 
             app.refresh();
@@ -360,12 +365,28 @@ export default defineComponent({
             })
         }
 
+        const onDelete = async function (selections: any[], {next}: any) {
+            await next({
+                ids: selections.map(e => e.id).join(",")
+            });
+            updateMenu();
+        }
 
         const onRowClick = function (row: any, column: any) {
             if (column.property && row.children) {
                 table.value.toggleRowExpansion(row);
             }
         }
+
+        const onUpsertSubmit = async function (isEdit: boolean, data: any, { next }: any) {
+            await next(data);
+            updateMenu();
+        }
+
+        const updateMenu = function () {
+            store.dispatch(AllActionTypes.PERM_MENU)
+        }
+
 
         const onRowContextMenu = function (row: any, column: any, event: Event) {
             const {rowEdit, rowDelete} = crud.value
@@ -429,7 +450,9 @@ export default defineComponent({
             contextMenu,
             upsertList,
             onUpsertOpen,
-            service
+            service,
+            onUpsertSubmit,
+            onDelete
         }
     }
 })
